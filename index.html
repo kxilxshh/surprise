@@ -1,55 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-
-  <head>
-    <meta charset="UTF-8">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="./style.css">
-
-  </head>
-    
-  <body>
-  <!DOCTYPE html>
-
-<html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <title>For My Love ❤️</title>
-
-    <link rel="stylesheet" href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Surprise For You 💌</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital@0;1&display=swap" rel="stylesheet"/>
 </head>
-
 <body>
 
-    <div class="container">
-
-        <h1>Hey My Love 💖</h1>
-
-        <p>You mean the world to me...</p>
-
-        <button onclick="showSurprise()">Click for a Surprise 🎁</button>
-
-        <div id="hiddenMessage" class="hidden">
-
-            <h2>I Love You So Much ❤️</h2>
-
-            <p>You make my life magical ✨</p>
-
-        </div>
-
+  <!-- ===== INTRO SCREEN ===== -->
+  <div id="intro-screen" class="screen active">
+    <div class="stars" id="stars"></div>
+    <div class="intro-content">
+      <p class="intro-label">A little something...</p>
+      <h1 class="intro-title">For <span class="name-highlight">Sandhiya</span> 💕</h1>
+      <p class="intro-sub">Close your eyes for a second.<br/>Then click below.</p>
+      <button class="btn-open" onclick="goToPage('envelope-screen')">Open Your Surprise ✉️</button>
     </div>
+    <div class="floating-hearts" id="floatingHearts"></div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- ===== ENVELOPE SCREEN ===== -->
+  <div id="envelope-screen" class="screen">
+    <div class="env-bg"></div>
+    <div class="envelope-wrapper">
+      <div class="envelope" id="envelope" onclick="openEnvelope()">
+        <div class="env-flap"></div>
+        <div class="env-body">
+          <div class="env-letter" id="envLetter">
+            <span>💌</span>
+            <p>Tap to open</p>
+          </div>
+        </div>
+      </div>
+      <p class="env-hint" id="envHint">Tap the envelope...</p>
+    </div>
+  </div>
 
+  <!-- ===== LETTER SCREEN ===== -->
+  <div id="letter-screen" class="screen">
+    <div class="letter-bg"></div>
+    <div class="letter-container">
+      <div class="letter-paper">
+        <div class="letter-top-deco">✦ ✦ ✦</div>
+        <p class="letter-greeting">My Dearest Love,</p>
+        <div class="letter-body" id="letterBody">
+          <!-- Text typed by JS -->
+        </div>
+        <p class="letter-sign">Forever yours,<br/><em>Your Person 💗</em></p>
+        <div class="letter-bottom-deco">✦ ✦ ✦</div>
+        <button class="btn-next" onclick="goToPage('gallery-screen')">See Something Special →</button>
+      </div>
+    </div>
+    <div class="petals-container" id="petals"></div>
+  </div>
+
+  <!-- ===== GALLERY / REASONS SCREEN ===== -->
+  <div id="gallery-screen" class="screen">
+    <div class="gallery-bg"></div>
+    <div class="gallery-content">
+      <h2 class="gallery-title">Reasons I Love You</h2>
+      <p class="gallery-subtitle">Just a few of millions...</p>
+      <div class="reasons-grid" id="reasonsGrid">
+        <!-- Cards injected by JS -->
+      </div>
+      <button class="btn-next btn-center" onclick="goToPage('final-screen')">One Last Thing... 💫</button>
+    </div>
+  </div>
+
+  <!-- ===== FINAL SCREEN ===== -->
+  <div id="final-screen" class="screen">
+    <div class="final-bg"></div>
+    <div class="fireworks" id="fireworks"></div>
+    <div class="final-content">
+      <div class="big-heart" id="bigHeart">❤️</div>
+      <h1 class="final-title">I Love You</h1>
+      <p class="final-sub">More than words can ever say.<br/>More than this website can hold.<br/>More than you know. 💕</p>
+      <div class="final-buttons">
+        <button class="btn-replay" onclick="replay()">💌 Read Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
-</html>
-    <script  src="./script.js"></script>
-
-  </body>
-  
 </html>
